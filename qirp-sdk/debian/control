@@ -10,5 +10,6 @@ Package: qirp-sdk
 Architecture: any
 Depends: ${misc:Depends},
          ros-jazzy-ros-base,
+         ros-jazzy-ocr-service,
          python3-pip,
 Description: The Qualcomm® Intelligent Robotics (QIR) SDK is a collection of components that enable you to develop robotic features on Qualcomm platforms. This SDK is applicable to the Qualcomm Linux releases.
