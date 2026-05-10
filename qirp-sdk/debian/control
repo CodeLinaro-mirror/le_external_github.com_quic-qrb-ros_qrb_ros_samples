@@ -11,6 +11,7 @@ Architecture: any
 Depends: ${misc:Depends},
          ros-jazzy-ros-base,
          ros-jazzy-ocr-service,
+         ros-jazzy-rplidar-ros,
          python3-pip,
          ros-jazzy-simulation-sample-amr-simple-motion,
          ros-jazzy-moveit,
