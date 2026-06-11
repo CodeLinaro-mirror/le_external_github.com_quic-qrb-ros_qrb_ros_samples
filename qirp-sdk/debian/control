@@ -9,6 +9,8 @@ Standards-Version: 3.9.2
 Package: qirp-sdk
 Architecture: any
 Depends: ${misc:Depends},
+	 ros-jazzy-qrb-ros-nn-inference,
+	 ros-jazzy-qrb-ros-benchmark,
          ros-jazzy-ros-base,
          ros-jazzy-ocr-service,
          ros-jazzy-rplidar-ros,
