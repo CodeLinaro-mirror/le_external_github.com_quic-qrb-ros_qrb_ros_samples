@@ -32,4 +32,5 @@ Depends: ${misc:Depends},
          ros-jazzy-qrb-camera,
          ros-jazzy-qrb-ros-camera,
          ros-jazzy-qrb-ros-video,
+         ros-jazzy-qrb-ros-video-test,
 Description: The Qualcomm® Intelligent Robotics (QIR) SDK is a collection of components that enable you to develop robotic features on Qualcomm platforms. This SDK is applicable to the Qualcomm Linux releases.
