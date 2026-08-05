@@ -1,0 +1,21 @@
+From 2d7a99b252bb20dbba037ed78c2bb7ea86c301e2 Mon Sep 17 00:00:00 2001
+From: chalia <chalia@qti.qualcomm.com>
+Date: Thu, 30 Jul 2026 15:19:31 +0800
+Subject: [PATCH] qirp-sdk: re-add ros-jazzy-qrb-ros-video-test dependency
+
+Change-Id: I76a9c2277f15eff73cbc99b4898f6b5459041cc5
+---
+ qirp-sdk/debian/control | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/qirp-sdk/debian/control b/qirp-sdk/debian/control
+index d357685..8507688 100644
+--- a/qirp-sdk/debian/control
++++ b/qirp-sdk/debian/control
+@@ -30,5 +30,6 @@ Depends: ${misc:Depends},
+          ros-jazzy-qrb-camera,
+          ros-jazzy-qrb-ros-camera,
+          ros-jazzy-qrb-ros-video,
++         ros-jazzy-qrb-ros-video-test,
+          ros-jazzy-xsens-mti-ros2-driver
+ Description: The Qualcomm® Intelligent Robotics (QIR) SDK is a collection of components that enable you to develop robotic features on Qualcomm platforms. This SDK is applicable to the Qualcomm Linux releases.
