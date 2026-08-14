@@ -1,0 +1,59 @@
+# Packages excluded from the image when building with --ddm.
+# These are packages qirp-sdk itself depends on (debian/control) that should
+# not ship in the DDM image. One package name per line.
+ros-jazzy-orbbec-camera
+ros-jazzy-moveit-ros-perception
+
+## overview
+gstreamer1.0-plugins-bad
+libopencv-calib3d406t64
+libopencv-core406t64
+libopencv-dnn406t64
+libopencv-highgui406t64
+libopencv-imgcodecs406t64
+libopencv-imgproc406t64
+libopencv-stitching406t64
+libpcl-dev
+python3-opencv
+ros-jazzy-cv-bridge
+ros-jazzy-image-proc
+ros-jazzy-image-publisher
+ros-jazzy-nav2-bringup
+ros-jazzy-pcl-conversions
+ros-jazzy-usb-cam
+
+
+##ffmpeg
+ros-jazzy-gz-common-vendor
+ros-jazzy-gz-fuel-tools-vendor
+ros-jazzy-gz-gui-vendor
+ros-jazzy-gz-physics-vendor
+ros-jazzy-gz-rendering-vendor
+ros-jazzy-gz-sensors-vendor
+ros-jazzy-gz-sim-vendor
+ros-jazzy-ros-gz-sim
+ros-jazzy-camera-ros
+ros-jazzy-compressed-image-transport
+ros-jazzy-compressed-depth-image-transport
+ros-jazzy-image-geometry
+ros-jazzy-image-transport-plugins
+ros-jazzy-image-view
+ros-jazzy-nav2-minimal-tb3-sim
+ros-jazzy-nav2-minimal-tb4-sim
+ros-jazzy-theora-image-transport
+
+
+## QT
+ros-jazzy-moveit-ros-visualization
+ros-jazzy-moveit-setup-assistant
+ros-jazzy-moveit-setup-app-plugins
+ros-jazzy-moveit-setup-controllers
+ros-jazzy-moveit-setup-core-plugins
+ros-jazzy-moveit-setup-framework
+ros-jazzy-moveit-setup-srdf-plugins
+ros-jazzy-nav2-rviz-plugins
+ros-jazzy-rviz-common
+ros-jazzy-rviz-default-plugins
+ros-jazzy-rviz-rendering
+ros-jazzy-rviz2
+ros-jazzy-slam-toolbox

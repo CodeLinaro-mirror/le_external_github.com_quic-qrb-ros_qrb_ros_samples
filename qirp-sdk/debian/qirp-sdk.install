@@ -1,1 +1,3 @@
 qirp-setup.sh usr/share/
+install-ddm-packages.sh usr/share/
+packages/ddm/server.manifest usr/share/packages/ddm/
