@@ -34,5 +34,21 @@ Depends: ${misc:Depends},
          ros-jazzy-qrb-ros-camera,
          ros-jazzy-qrb-ros-video,
          ros-jazzy-qrb-ros-video-test,
-         ros-jazzy-xsens-mti-ros2-driver
+         ros-jazzy-xsens-mti-ros2-driver,
+         ros-jazzy-qrb-yolo-process,
+         ros-jazzy-qrb-ros-cv-tensor-common-process,
+         ros-jazzy-qrb-ros-yolo-process,
+         ros-jazzy-qrb-ros-vision-msgs,
+         ros-jazzy-sample-depth-estimation,
+         ros-jazzy-sample-face-detection,
+         ros-jazzy-sample-hand-detection,
+         ros-jazzy-sample-hrnet-pose-estimation,
+         ros-jazzy-sample-object-detection,
+         ros-jazzy-sample-object-segmentation,
+         ros-jazzy-sample-resnet101,
+         ros-jazzy-qrb-ros-video-test,
+         ros-jazzy-xsens-mti-ros2-driver,
+         ros-jazzy-sample-resnet101,
+         ros-jazzy-sample-hrnet-pose-estimation
 Description: The Qualcomm® Intelligent Robotics (QIR) SDK is a collection of components that enable you to develop robotic features on Qualcomm platforms. This SDK is applicable to the Qualcomm Linux releases.
+
