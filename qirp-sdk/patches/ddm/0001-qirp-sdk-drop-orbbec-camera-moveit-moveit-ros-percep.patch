@@ -1,16 +1,16 @@
-From 350ed95b71f763f7625081ba3f18afdf6cef56c2 Mon Sep 17 00:00:00 2001
-From: chalia <chalia@qti.qualcomm.com>
-Date: Wed, 29 Jul 2026 15:00:53 +0800
-Subject: [PATCH] qirp-sdk: drop orbbec-camera, moveit, and qrb-ros-video-test
- deps
+From 8965b5009ae1bdc92ae5f8069fbea35e40d2a73d Mon Sep 17 00:00:00 2001
+From: hangshen <hangshen@qti.qualcomm.com>
+Date: Mon, 31 Aug 2026 14:44:48 +0800
+Subject: [PATCH] qirp-sdk: drop orbbec-camera/moveit/moveit-ros-perception for
+ DDM
 
-Change-Id: I4f18ba60a5bdd1147558b0535f6a3df19896a06d
+Change-Id: Ic8b3254d8e72854f5f2c7c8562f143250714ca1c
 ---
- qirp-sdk/debian/control | 4 ----
- 1 file changed, 4 deletions(-)
+ qirp-sdk/debian/control | 3 ---
+ 1 file changed, 3 deletions(-)
 
 diff --git a/qirp-sdk/debian/control b/qirp-sdk/debian/control
-index 3c604a5..d357685 100644
+index 2a6b09c..51654cf 100644
 --- a/qirp-sdk/debian/control
 +++ b/qirp-sdk/debian/control
 @@ -14,7 +14,6 @@ Depends: ${misc:Depends},
@@ -21,7 +21,7 @@ index 3c604a5..d357685 100644
           ros-jazzy-lib-mem-dmabuf,
           ros-jazzy-qrb-ros-transport-image-type,
           ros-jazzy-qrb-ros-transport-point-cloud2-type,
-@@ -27,12 +26,9 @@ Depends: ${misc:Depends},
+@@ -27,8 +26,6 @@ Depends: ${misc:Depends},
           ros-jazzy-sample-apriltag,
           python3-pip,
           ros-jazzy-simulation-sample-amr-simple-motion,
@@ -30,7 +30,6 @@ index 3c604a5..d357685 100644
           ros-jazzy-simulation-sample-pick-and-place,
           ros-jazzy-qrb-camera,
           ros-jazzy-qrb-ros-camera,
-          ros-jazzy-qrb-ros-video,
--         ros-jazzy-qrb-ros-video-test,
-          ros-jazzy-xsens-mti-ros2-driver
- Description: The Qualcomm® Intelligent Robotics (QIR) SDK is a collection of components that enable you to develop robotic features on Qualcomm platforms. This SDK is applicable to the Qualcomm Linux releases.
+-- 
+2.43.0
+
