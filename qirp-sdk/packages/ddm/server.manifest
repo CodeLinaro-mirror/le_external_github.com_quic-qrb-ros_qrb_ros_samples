@@ -67,6 +67,7 @@ wlan-prop
 weston
 libweston-13-0
 weston-examples
+audiolite-devicetree
 
 ## Trim Opensource packages for minimal rootfs build.
 ## These packages are excluded from build-utils/ubuntu/packages/base/server.manifest during ddm build.
@@ -220,6 +221,7 @@ libceres-dev
 libconsole-bridge1.0
 libcurl3t64-gnutls
 libcurl4t64
+libdb5.3t64
 libdconf1
 libdevmapper-event1.02.1
 libduktape207
