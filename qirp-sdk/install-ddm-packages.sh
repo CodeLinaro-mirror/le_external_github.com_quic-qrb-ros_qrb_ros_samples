@@ -19,6 +19,18 @@
 
 set -euo pipefail
 
+export DEBIAN_FRONTEND=noninteractive
+
+# Preseed debconf answers for packages known to prompt interactively, so a
+# non-interactive install never blocks waiting on input.
+printf '%s\n' \
+    'landscape-common landscape-common/sysinfo select Do not display sysinfo on login' \
+    | debconf-set-selections
+
+# Clear out any package left half-configured by a previous interrupted run
+# before installing more, so dpkg doesn't refuse to proceed.
+dpkg --configure -a
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 MANIFEST_PATH="${1:-$SCRIPT_DIR/packages/ddm/server.manifest}"
 
@@ -46,12 +58,12 @@ fi
 
 log_info "Installing ${#packages[@]} DDM-excluded package(s) from $MANIFEST_PATH..."
 
-sudo DEBIAN_FRONTEND=noninteractive apt-get update
+apt-get update
 
 failed=()
 for package in "${packages[@]}"; do
     log_info "Installing package: $package"
-    if sudo DEBIAN_FRONTEND=noninteractive apt-get install -y "$package"; then
+    if NEEDRESTART_MODE=l apt-get install --reinstall -y "$package"; then
         log_info "Successfully installed: $package"
     else
         log_error "Failed to install: $package"
