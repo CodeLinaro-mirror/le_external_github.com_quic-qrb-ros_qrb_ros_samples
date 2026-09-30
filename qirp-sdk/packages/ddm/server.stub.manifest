@@ -1,0 +1,15 @@
+# OSS/ROS packages that qirp-sdk transitively depends on (debian/control),
+# confirmed by an actual DDM build attempt with qirp-sdk un-blacklisted:
+# mmdebstrap pulled in exactly these packages as real, resolved dependencies,
+# which is what check_ddm_blacklist() flagged before they were moved here.
+#
+# They're allowed into DDM images, but only as equivs-style build-time stub
+# packages (see pack_deb.py's build_ddm_stub_packages()) so the DDM build
+# stays slim and never fetches their real content from the OSS/ROS archives.
+#
+# After the device is flashed, install-ddm-packages.sh installs the real
+# package for every name listed here, replacing the stub.
+#
+# One package name per line.
+libvisual-0.4-0
+libgstreamer1.0-0

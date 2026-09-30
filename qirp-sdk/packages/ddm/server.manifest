@@ -243,6 +243,7 @@ libftdi1-2
 libfuse3-3
 libfwupd2
 libgdbm6t64
+libgstreamer1.0-0
 libgdbm-compat4t64
 libgflags2.2
 libgflags-dev
@@ -409,6 +410,7 @@ libusb-1.0-0
 libutempter0
 libuv1t64
 libvolume-key1
+libvisual-0.4-0
 libwebrtc-audio-processing1
 libwireplumber-0.4-0
 libwrap0
