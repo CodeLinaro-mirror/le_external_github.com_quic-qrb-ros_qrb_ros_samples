@@ -60,8 +60,39 @@ log_info "Installing ${#packages[@]} DDM-excluded package(s) from $MANIFEST_PATH
 
 apt-get update
 
+# Fetch all .debs before unpack/configure starts; ignore failures here
+# since the install attempt below re-fetches as needed and still falls back.
+SECONDS=0
+NEEDRESTART_MODE=l apt-get install --reinstall -y --download-only "${packages[@]}" || true
+log_info "Download took ${SECONDS}s"
+
+# One transaction resolves dependencies once instead of per package.
+SECONDS=0
+if NEEDRESTART_MODE=l apt-get install --reinstall -y "${packages[@]}"; then
+    log_info "Install took ${SECONDS}s"
+    log_info "All DDM-excluded packages installed successfully."
+    exit 0
+fi
+log_info "Install took ${SECONDS}s (failed)"
+
+# Fall back to installing one at a time to isolate which package(s) failed.
+log_error "Batched install failed; retrying packages individually to isolate the failure(s)."
+
+# DDM stubs are left with desired-action "purge" as a marker (dpkg -l shows
+# "pi"); once the real package replaces one it flips to "install" ("ii").
+# Skip only on that exact match -- anything else gets a real attempt.
+is_real_package_installed() {
+    [ "$(dpkg-query -W -f='${Status}' "$1" 2>/dev/null)" = "install ok installed" ]
+}
+
+SECONDS=0
 failed=()
 for package in "${packages[@]}"; do
+    if is_real_package_installed "$package"; then
+        log_info "Already installed, skipping: $package"
+        continue
+    fi
+
     log_info "Installing package: $package"
     if NEEDRESTART_MODE=l apt-get install --reinstall -y "$package"; then
         log_info "Successfully installed: $package"
@@ -70,6 +101,7 @@ for package in "${packages[@]}"; do
         failed+=("$package")
     fi
 done
+log_info "Fallback install took ${SECONDS}s"
 
 if [ "${#failed[@]}" -ne 0 ]; then
     log_error "Failed to install ${#failed[@]} package(s): ${failed[*]}"

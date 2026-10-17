@@ -67,7 +67,7 @@ ros-jazzy-slam-toolbox
 #weston
 #libweston-13-0
 #weston-examples
-audiolite-devicetree
+#audiolite-devicetree
 
 ## Trim Opensource packages for minimal rootfs build.
 ## These packages are excluded from build-utils/ubuntu/packages/base/server.manifest during ddm build.
