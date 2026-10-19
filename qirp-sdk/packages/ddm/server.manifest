@@ -975,7 +975,6 @@ libxpm4
 libxt6t64
 libyaml-dev
 libzstd-dev
-linux-libc-dev
 lttng-tools
 m4
 mpi-default-bin
@@ -1177,7 +1176,6 @@ ros-jazzy-rosidl-typesupport-fastrtps-cpp
 ros-jazzy-rosidl-typesupport-interface
 ros-jazzy-rosidl-typesupport-introspection-c
 ros-jazzy-rosidl-typesupport-introspection-cpp
-ros-jazzy-rplidar-ros
 ros-jazzy-rpyutils
 ros-jazzy-rsl
 ros-jazzy-ruckig

@@ -361,7 +361,6 @@ libyaml-cpp0.8
 libyaml-cpp-dev
 libyaml-dev
 libzstd-dev
-linux-libc-dev
 lsb-release
 lttng-tools
 m4
@@ -623,7 +622,6 @@ ros-jazzy-rosidl-typesupport-interface
 ros-jazzy-rosidl-typesupport-introspection-c
 ros-jazzy-rosidl-typesupport-introspection-cpp
 ros-jazzy-ros-workspace
-ros-jazzy-rplidar-ros
 ros-jazzy-rpyutils
 ros-jazzy-rsl
 ros-jazzy-ruckig
