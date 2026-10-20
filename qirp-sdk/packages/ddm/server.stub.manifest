@@ -35,6 +35,7 @@ gfortran-13-aarch64-linux-gnu
 google-mock
 googletest
 graphviz
+gstreamer1.0-plugins-base
 ibverbs-providers
 icu-devtools
 libann0
@@ -207,6 +208,7 @@ libgprofng0
 libgraphite2-3
 libgssapi-krb5-2
 libgstreamer1.0-0
+libgstreamer-plugins-base1.0-0
 libgtest-dev
 libgts-0.7-5t64
 libgudev-1.0-0

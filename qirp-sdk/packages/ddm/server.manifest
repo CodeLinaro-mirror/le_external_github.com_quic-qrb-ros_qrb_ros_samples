@@ -158,6 +158,7 @@ grub-efi-arm64
 grub-efi-arm64-bin
 grub-efi-arm64-signed
 gsettings-desktop-schemas
+gstreamer1.0-plugins-base
 gstreamer1.0-plugins-good
 gstreamer1.0-tools
 hdparm
@@ -243,6 +244,7 @@ libfuse3-3
 libfwupd2
 libgdbm6t64
 libgstreamer1.0-0
+libgstreamer-plugins-base1.0-0
 libgdbm-compat4t64
 libgflags2.2
 libgflags-dev
