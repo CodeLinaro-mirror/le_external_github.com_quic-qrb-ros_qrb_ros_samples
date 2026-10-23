@@ -69,7 +69,7 @@ ros-jazzy-slam-toolbox
 #weston-examples
 #audiolite-devicetree
 docker.io
-docker-compose-plugin
+docker-compose-v2
 
 ## Trim Opensource packages for minimal rootfs build.
 ## These packages are excluded from build-utils/ubuntu/packages/base/server.manifest during ddm build.
