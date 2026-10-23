@@ -58,6 +58,32 @@ fi
 
 log_info "Installing ${#packages[@]} DDM-excluded package(s) from $MANIFEST_PATH..."
 
+# The sample packages below download their models into /opt/model from their
+# postinst. In the DDM image that postinst ran at build time, before wget and
+# sudo (both in the DDM exclude manifest) were available, so no model was
+# fetched. Re-run the postinst now that those tools are installed. Their
+# postinsts tolerate download failures, so this never fails the script.
+MODEL_POSTINST_PACKAGES=(
+    ros-jazzy-sample-hand-detection
+    ros-jazzy-sample-face-detection
+    ros-jazzy-sample-hrnet-pose-estimation
+    ros-jazzy-sample-resnet101
+    ros-jazzy-sample-depth-estimation
+)
+
+rerun_model_postinsts() {
+    local package script
+    for package in "${MODEL_POSTINST_PACKAGES[@]}"; do
+        script="/var/lib/dpkg/info/${package}.postinst"
+        if [ ! -x "$script" ]; then
+            log_info "No postinst for $package, skipping model download"
+            continue
+        fi
+        log_info "Re-running postinst to download models: $package"
+        "$script" configure || log_error "postinst failed for $package (models may be missing in /opt/model)"
+    done
+}
+
 apt-get update
 
 # Fetch all .debs before unpack/configure starts; ignore failures here
@@ -70,6 +96,7 @@ log_info "Download took ${SECONDS}s"
 SECONDS=0
 if NEEDRESTART_MODE=l apt-get install --reinstall -y "${packages[@]}"; then
     log_info "Install took ${SECONDS}s"
+    rerun_model_postinsts
     log_info "All DDM-excluded packages installed successfully."
     exit 0
 fi
@@ -102,6 +129,10 @@ for package in "${packages[@]}"; do
     fi
 done
 log_info "Fallback install took ${SECONDS}s"
+
+# Run regardless of unrelated package failures below (e.g. one unavailable
+# package must not skip the model downloads).
+rerun_model_postinsts
 
 if [ "${#failed[@]}" -ne 0 ]; then
     log_error "Failed to install ${#failed[@]} package(s): ${failed[*]}"
